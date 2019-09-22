@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# src files to ignore
+App.js
+App.test.js
+logo.svg
+serviceWorker.js
