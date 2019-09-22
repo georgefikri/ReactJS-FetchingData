@@ -1,6 +1,6 @@
 # React JS : Fetching Data From API
 - fetching data from API using "Fetch"
-- Handeling if the data is not yet received from the API display the word Loading 
+- Handeling if the data is not yet received from the API display the word "Loading" 
 
 ### API Source
 [JSON PlaceHolder](https://jsonplaceholder.typicode.com/users)

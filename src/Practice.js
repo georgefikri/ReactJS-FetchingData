@@ -6,9 +6,6 @@ class Practice extends React.Component {
     constructor(){
         super();
         this.state = {
-            /* the problem I'd here was i set the API property to object & our web API returns array
-            that was making a confusion
-            Take Care: set the empty data type like the below with the same type the Web API returns  */
             API:[],
             loading: false
         }

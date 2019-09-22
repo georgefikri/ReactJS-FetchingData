@@ -7,12 +7,7 @@ class Sub extends React.Component {
     render(){
         
         return (
-             /* <li>
-                 <p>name: {this.props.name}</p>
-                 <p>username: {this.props.username}</p>
-                 <p>email: {this.props.email}</p>
-                 <hr />
-            </li> */
+
                 
             <li>
                 <p>{this.props.data.name}</p>
