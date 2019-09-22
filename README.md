@@ -2,6 +2,13 @@
 - fetching data from API using "Fetch"
 - Handeling if the data is not yet received from the API display the word "Loading" 
 
+
+## Files
+/src/index.js
+/src/Practice.js
+/src/PracticeSub.js
+/src/index.css
+
 ### API Source
 [JSON PlaceHolder](https://jsonplaceholder.typicode.com/users)
 
