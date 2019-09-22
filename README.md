@@ -4,10 +4,10 @@
 
 
 ## Files
-/src/index.js
-/src/Practice.js
-/src/PracticeSub.js
-/src/index.css
+- /src/index.js
+- /src/Practice.js
+- /src/PracticeSub.js
+- /src/index.css
 
 ### API Source
 [JSON PlaceHolder](https://jsonplaceholder.typicode.com/users)
