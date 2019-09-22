@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # src files to ignore
-./src/App.js
-./src/App.test.js
-./src/logo.svg
-./src/serviceWorker.js
+/src/App.js
+/src/App.test.js
+/src/logo.svg
+/src/serviceWorker.js
