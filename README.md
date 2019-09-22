@@ -1,6 +1,15 @@
+# React JS : Fetching Data From API
+- fetching data from API using "Fetch"
+- Handeling if the data is not yet received from the API display the word Loading 
+
+### API Source
+[JSON PlaceHolder](https://jsonplaceholder.typicode.com/users)
+
+
+### Project Starter Code is from 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
