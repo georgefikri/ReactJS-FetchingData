@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
+import useFetch from './useFetch';
 
 /* thinking of what i will do
   1. create class component
@@ -13,20 +14,9 @@ import './App.css';
 */
 
 function App() {
-  const [loading, setLoading] = useState(false);
-  const [info, setInfo] = useState({});
+  const { data: info, loading } = useFetch("https://swapi.co/api/people/1");
 
-  useEffect(() => {
-    setLoading(true);
-    fetch("https://swapi.co/api/people/1")
-      .then(response => response.json())
-      .then(data => {
-        setInfo(data);
-        setLoading(false);
-      });
-  }, []);
-
-  const getData = loading ? "loading..." : info.name;
+  const getData = loading ? "loading..." : info && info.name;
 
   return (
     <div>
