@@ -1,52 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import  Sub from "./PracticeSub"
 
-class Practice extends React.Component {
+function Practice() {
+    const [API, setAPI] = useState([]);
+    const [loading, setLoading] = useState(false);
 
-    constructor(){
-        super();
-        this.state = {
-            API:[],
-            loading: false
-        }
-    }
-
-    componentDidMount(){
-        this.setState({loading:true})
+    useEffect(() => {
+        setLoading(true);
         fetch("https://jsonplaceholder.typicode.com/users")
-        .then(response => response.json())
-        .then(data => {
-            this.setState({
-                API: data,
-                loading: false
-            })
+            .then(response => response.json())
+            .then(data => {
+                setAPI(data);
+                setLoading(false);
+            });
+    }, []);
 
-        })
+    let all;
+    if (loading) {
+        all = "loading....";
+    } else {
+        all = API.map((element) => (
+            //return <Sub key={element.id} name={element.name} username={element.username} email={element.email} />
+            <Sub key={element.id} data={element} />
+        ));
     }
 
-
-    render(){
-        let all
-        if(this.state.loading === true) {
-             all = "loading...."
-        } else {
-             all = this.state.API.map((element)=>{
-                //return <Sub key={element.id} name={element.name} username={element.username} email={element.email} />
-                
-                return <Sub key={element.id} data={element}  />
-            })
-        }
-
-
-        return (
-            <ul>
-                {all}
-            </ul>
-        )
-
-
-    }
-
+    return (
+        <ul>
+            {all}
+        </ul>
+    );
 }
 
-export default Practice
+export default Practice;
