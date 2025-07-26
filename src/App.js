@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 /* thinking of what i will do
@@ -12,39 +12,27 @@ import './App.css';
   8. check if the data didn't come yet print word "loading" other than that print the actual data.
 */
 
-class App extends React.Component {
-  constructor(){
-    super();
-    this.state= {
-        /* add boolean because if loading print word loading */
-        loading: false,
-        info: {}
-    }
-  }
+function App() {
+  const [loading, setLoading] = useState(false);
+  const [info, setInfo] = useState({});
 
-  componentDidMount(){
-    /* Before the Fetch : changing the state of loading to true to print word loading */
-    this.setState({loading:true})
+  useEffect(() => {
+    setLoading(true);
     fetch("https://swapi.co/api/people/1")
-    .then( response => response.json())
-    .then(data => {
-      this.setState({
-        /* after fetching and getting the data reversing the loading to false print our data back */
-        loading: false,
-        info: data
-      })
-    })
-  }
+      .then(response => response.json())
+      .then(data => {
+        setInfo(data);
+        setLoading(false);
+      });
+  }, []);
 
-  render(){
-    /* if state.loading is true print word loading else print name */
-    let getData = this.state.loading === true ? "loading..." : this.state.info.name
+  const getData = loading ? "loading..." : info.name;
 
-    return (
-        <div>
-          {getData}
-        </div>
-    )
-  }
+  return (
+    <div>
+      {getData}
+    </div>
+  );
 }
+
 export default App;
